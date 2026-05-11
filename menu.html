@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Novella - Menu</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="main.js"></script>
+  <style>
+   
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background-color: transparent;
+      border: 1px solid #B8894A;
+      color: #B8894A;
+      padding: 8px 20px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: Georgia, serif;
+    }
+    .filter-btn:hover {
+      background-color: #B8894A;
+      color: #1C0F06;
+    }
+    .active-filter {
+      background-color: #B8894A;
+      color: #1C0F06;
+    }
+    .menu-page-hero {
+      background-color: #1C0F06;
+      padding: 100px 60px 50px;
+    }
+    .menu-page-hero h1 {
+      font-size: 55px;
+      color: #F5ECD6;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .menu-page-hero h1 em {
+      color: #B8894A;
+    }
+    .menu-page-hero p {
+      font-size: 15px;
+      color: #A07848;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<nav id="mainNav">
+  <div class="nav-logo">
+    <img src="cafe_novella.png" alt="logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contactUs.html">Contact</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
+  </ul>
+</nav>
+
+<div class="menu-page-hero">
+  <p class="section-label">What We Serve</p>
+  <h1>Our Menu</h1>
+  <p>Crafted with care. Paired with stories.</p>
+</div>
+<br><br>
+
+
+  <div class="filter menu">
+    <button class="filter-btn active-filter" onclick="filterMenu('all')"><b>All</b></button>
+    <button class="filter-btn" onclick="filterMenu('coffee')"><b>Coffee</b></button>
+    <button class="filter-btn" onclick="filterMenu('cold')"><b>Cold Drinks</b></button>
+    <button class="filter-btn" onclick="filterMenu('food')"><b>Food</b></button>
+    <button class="filter-btn" onclick="filterMenu('books')"><b>Books</b></button>
+  </div>
+
+  <div class="menu-grid">
+
+    <div class="menu-card" data-category="coffee">
+      <img src="espresso.png" alt="Novella Espresso" length="160" width="160">
+      <div class="menu-card-tag">Signature</div>
+      <div class="menu-card-name">Novella Espresso</div>
+      <div class="menu-card-desc">
+        A double shot of our house blend, pulled to perfection.
+        Dark, bold, with a caramel finish.
+      </div>
+      <div class="menu-card-price">14.50 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="coffee">
+      <img src="latte.png" alt="Chapter Latte" length="160" width="160">
+      <div class="menu-card-tag">Popular</div>
+      <div class="menu-card-name">Chapter Latte</div>
+      <div class="menu-card-desc">
+        Espresso, steamed milk,and a whisper of vanilla.
+        Available hot or iced.
+      </div>
+      <div class="menu-card-price">18.50 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="coffee">
+      <img src="flat white.png" alt="Flat White" length="160" width="160">
+      <div class="menu-card-tag">Classic</div>
+      <div class="menu-card-name">Flat White</div>
+      <div class="menu-card-desc">
+        Velvety microfoam over a ristretto shot.
+        Less milk, Stronger Coffee Flavor.
+        Strong, smooth, and satisfying.
+      </div>
+      <div class="menu-card-price">14.00 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="coffee">
+      <img src="cardamom.png" alt="Cardamom" length="160" width="160">
+      <div class="menu-card-tag">Seasonal</div>
+      <div class="menu-card-name">Cardamom Fog</div>
+      <div class="menu-card-desc">
+        Earl Grey tea latte with steamed milk, vanilla, and a touch of cardamom.
+        Inspired by Arabian evenings.
+      </div>
+      <div class="menu-card-price">18.00 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="coffee">
+      <img src="Americano.png" alt="Americano" length="160" width="160">
+      <div class="menu-card-tag">Hot/Cold Drink</div>
+      <div class="menu-card-name">Americano</div>
+      <div class="menu-card-desc">
+        Espresso diluted with hot/cold water. Clean, simple, and honest.
+        The reader's companion.
+      </div>
+      <div class="menu-card-price">10.00 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="coffee">
+      <img src="cuppuccino.png" alt="Cappuccino" length="200" width="200">
+      <div class="menu-card-tag">Hot Drink</div>
+      <div class="menu-card-name">Cappuccino</div>
+      <div class="menu-card-desc">
+        Equal parts espresso, steamed milk, and thick foam.
+        A classic done right.
+      </div>
+      <div class="menu-card-price">15.00 SR</div>
+    </div>
+
+
+    <div class="menu-card" data-category="cold">
+      <img src="cold brew.png" alt="Cold Brew" length="160" width="160" >
+      <div class="menu-card-tag">Cold Brew</div>
+      <div class="menu-card-name">Epilogue Cold Brew</div>
+      <div class="menu-card-desc">
+        Steeped 24 hours. Smooth, rich, and served over hand-carved ice.
+        A story worth finishing.
+      </div>
+      <div class="menu-card-price">17.00 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="cold">
+      <img src="ice.png" alt="Iced Latte" length="160" width="160">
+      <div class="menu-card-tag">Iced</div>
+      <div class="menu-card-name">Iced Latte</div>
+      <div class="menu-card-desc">
+        Our classic latte poured over ice with a drizzle of caramel.
+        Perfect for warm afternoons.
+      </div>
+      <div class="menu-card-price">16.00 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="cold">
+      <img src="mint.png" alt="Mint Lemonade" length="130" width="160">
+      <div class="menu-card-tag">Cold</div>
+      <div class="menu-card-name">Mint Lemonade</div>
+      <div class="menu-card-desc">
+        Fresh lemon, mint, and sparkling water.
+        A refreshing break between chapters.
+      </div>
+      <div class="menu-card-price">11.50 SR</div>
+    </div>
+
+
+    <div class="menu-card" data-category="food">
+      <img src="croissant.png" alt="Croissant" length="130" width="130">
+      <div class="menu-card-tag">Pastry</div>
+      <div class="menu-card-name">Prose Croissant</div>
+      <div class="menu-card-desc">
+        Buttery, flaky layers baked fresh every morning.
+        Layered with strawberies with a dusting of powdered sugar.
+      </div>
+      <div class="menu-card-price">21.00 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="food">
+      <img src="cake.png" alt="Cake" length="160" width="160">
+      <div class="menu-card-tag">Cake</div>
+      <div class="menu-card-name">Brown Butter Cake</div>
+      <div class="menu-card-desc">
+        Rich, nutty, and served warm with a dusting of powdered sugar.
+        A chapter-ending treat.
+      </div>
+      <div class="menu-card-price">25.00 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="food">
+      <img src="sandwich.png" alt="Sandwich" length="160" width="160">
+      <div class="menu-card-tag">Sandwich</div>
+      <div class="menu-card-name">The Bookmark</div>
+      <div class="menu-card-desc">
+        Grilled sourdough, brie, fig jam, and rocket.
+        Fuel for long reading sessions.
+      </div>
+      <div class="menu-card-price">8.00 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="books">
+      <div class="menu-card-tag">Library</div>
+      <div class="menu-card-name">Borrow a Book</div>
+      <div class="menu-card-desc">
+        Choose any title from our shelves and read it during your visit.
+        Free with any order.
+      </div>
+      <div class="menu-card-price">Free</div>
+    </div>
+
+    <div class="menu-card" data-category="books">
+      <div class="menu-card-tag">Take Home</div>
+      <div class="menu-card-name">Buy a Book</div>
+      <div class="menu-card-desc">
+        Take any title home from our curated collection.
+        Prices vary by book.
+      </div>
+      <div class="menu-card-price">From 30 SR</div>
+    </div>
+
+    <div class="menu-card" data-category="books">
+      <div class="menu-card-tag">Club</div>
+      <div class="menu-card-name">Monthly Book Club</div>
+      <div class="menu-card-desc">
+        Join our monthly readers club one new book, one evening session,
+        one community of book lovers.
+      </div>
+      <div class="menu-card-price">50 SR / month</div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="section section-mid">
+  <p class="section-label">Best Value</p>
+  <h2 class="section-title">Book & Coffee Bundles</h2>
+  <div class="section-rule"></div>
+
+  <div class="offers-grid">
+
+    <div class="offer-card">
+      <div class="offer-badge">⭐ Best Seller</div>
+      <div class="offer-icon">📚☕</div>
+      <div class="offer-title">The Morning Chapter</div>
+      <div class="offer-desc">
+        Espresso or Flat White + a debut novel from staff picks.
+        Change your book weekly.
+      </div>
+      <div class="offer-price">11.00 SR</div>
+      <div class="offer-old-price">Was: 15.00 SR</div>
+      <a class="btn-primary" href="contactUs.html">Reserve Now</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-badge">Weekend</div>
+      <div class="offer-icon">🕯️📚</div>
+      <div class="offer-title">The Classics Combo</div>
+      <div class="offer-desc">
+        A classic literature title + Chapter Latte + Prose Croissant.
+        A full afternoon, sorted.
+      </div>
+      <div class="offer-price">14.00 SR</div>
+      <div class="offer-old-price">Was: 19.00 SR</div>
+      <a class="btn-primary" href="contactUs.html">Reserve Now</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-badge">Evening</div>
+      <div class="offer-icon">🌙📖</div>
+      <div class="offer-title">Nightcap & Novel</div>
+      <div class="offer-desc">
+        Decaf blend + mystery/thriller + warm chocolate square.
+        The perfect night-in.
+      </div>
+      <div class="offer-price">15.00 SR</div>
+      <a class="btn-outline" href="contactUs.html">Join Club</a>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-badge">New!</div>
+      <div class="offer-icon">🫖📜</div>
+      <div class="offer-title">Tea & Poetry</div>
+      <div class="offer-desc">
+        Moroccan mint tea + a curated poetry collection.
+        Perfect for a quiet morning.
+      </div>
+      <div class="offer-price">8.00 SR</div>
+      <a class="btn-outline" href="contactUs.html">Reserve Now</a>
+    </div>
+
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-logo">Café Novella</div>
+
+  <div class="footer-rule"></div>
+
+  <div class="footer-copy">
+    Students: Habeba Khalil, Hagar Mostafa, Sara Mostafa, Nagat Zein
+    <br>
+    Fundamentals of Web Design / CIS 201
+    <br>
+    © Alyamamah University 2026
+  </div>
+</footer>
+
+
+</body>
+</html>
